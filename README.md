@@ -6,6 +6,19 @@ I wrote this software with the goal of becoming more familiar with Python and ga
 
 [Software Demo Video]()
 
+How to Run
+
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python main.py
+
+Controls
+
+W / S → Player 1
+↑ / ↓ → Player 2
+SPACE → start / serve / continue
+
 # Development Environment
 
 - Visual Studio Code
