@@ -382,6 +382,10 @@ class GameView(arcade.View):
         self.paddle1_y = self._move_paddle(self.paddle1_y, self.paddle1_up_pressed, self.paddle1_down_pressed, delta_time)
         self.paddle2_y = self._move_paddle(self.paddle2_y, self.paddle2_up_pressed, self.paddle2_down_pressed, delta_time)
 
+    # Design choice:
+    # Using delta time for ball movement so speed is consistent across frame rates.
+    # Prevents the ball from moving faster/slower depending on FPS and improves smoothness.
+
     def _update_ball(self, delta_time):
         self.ball_x += self.ball_change_x * delta_time
         self.ball_y += self.ball_change_y * delta_time
