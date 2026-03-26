@@ -8,19 +8,16 @@ I wrote this software with the goal of becoming more familiar with Python and ga
 
 ## How to Run
 
-1. Open a terminal in the project folder
+1. Open a terminal and navigate to the project folder
 
-2. Create a virtual environment:
-   python3 -m venv .venv
+2. Run:
 
-3. Activate it:
-   source .venv/bin/activate
-
-4. Install dependencies:
-   pip install -r requirements.txt
-
-5. Run the game:
-   python main.py
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python main.py 
+```
 
 ## How to Play
 
@@ -28,28 +25,27 @@ I wrote this software with the goal of becoming more familiar with Python and ga
 - Player 2: ↑ / ↓  
 - SPACE: start, serve, and continue  
 
-- First player to 2 points wins  
-- Ball speeds up during rallies  
+- First player to 5 points wins! 
 
-# Development Environment
+## Development Environment
 
 - Visual Studio Code
 - Python 3
 - Arcade Library
 - Git / GitHub
 
-# Useful Websites
+## Useful Websites
 
 - [Python Arcade Library](https://api.arcade.academy/en/stable/example_code/index.html)
 - [How to add fonts to Python Arcade](https://www.makeuseof.com/python-arcade-custom-fonts-text-effects/)
 - [Second Source for Python Arcade Library](https://arcade-pk.readthedocs.io/en/latest/)
 
-# Future Work
+## Future Work
 
 - Fully refactor to object-oriented design.
 - Add sound effects for paddles, scoring, and game start. 
 - Add a single player mode with levels and a basic AI for the second paddle.  
 
-# AI disclosure
+## AI disclosure
 
 I used ChatGPT as a learning and reference tool throughout this project to help think through design decisions, debug issues, and clarify Python and Arcade library usage. I also used it to better understand concepts such as delta time, collision handling, and structuring a game loop. All final code reflects my own understanding, with AI being primarily used to support learning and problem solving rather than generate complete solutions.
