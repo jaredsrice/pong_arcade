@@ -53,8 +53,8 @@ class GameView(arcade.View):
         # -----------------------------
         # Shared layout values
         # -----------------------------
-        self.center_x = WINDOW_WIDTH / 2
-        self.center_y = WINDOW_HEIGHT / 2
+        self.screen_center_x = WINDOW_WIDTH / 2
+        self.screen_center_y = WINDOW_HEIGHT / 2
 
         # -----------------------------
         # Game state
@@ -77,9 +77,9 @@ class GameView(arcade.View):
         # -----------------------------
         self.paddle_margin_x = round(32 * SCALE_X)
         self.paddle1_x = self.paddle_margin_x
-        self.paddle1_y = self.center_y
+        self.paddle1_y = self.screen_center_y
         self.paddle2_x = WINDOW_WIDTH - self.paddle_margin_x
-        self.paddle2_y = self.center_y
+        self.paddle2_y = self.screen_center_y
 
         # Design choice:
         # Paddle size, spacing, and speed are all scaled from base layout, to again preserve proportions and feel when resizing window.
@@ -100,8 +100,8 @@ class GameView(arcade.View):
         # -----------------------------
         self.ball_size = round(20 * SCALE)
         self.ball_half_size = self.ball_size / 2
-        self.ball_x = self.center_x
-        self.ball_y = self.center_y
+        self.ball_x = self.screen_center_x
+        self.ball_y = self.screen_center_y
 
         # -----------------------------
         # Ball movement
@@ -147,7 +147,7 @@ class GameView(arcade.View):
     def _create_text_objects(self):
         self.player1_score_text = arcade.Text(
             f"{self.player1_score}",
-            self.center_x - (65 * SCALE_X),
+            self.screen_center_x - (65 * SCALE_X),
             WINDOW_HEIGHT - (90 * SCALE_Y),
             color=arcade.color.WHITE_SMOKE,
             font_size=self.score_font_size,
@@ -157,7 +157,7 @@ class GameView(arcade.View):
 
         self.player2_score_text = arcade.Text(
             f"{self.player2_score}",
-            self.center_x + (85 * SCALE_X),
+            self.screen_center_x + (85 * SCALE_X),
             WINDOW_HEIGHT - (90 * SCALE_Y),
             color=arcade.color.WHITE_SMOKE,
             font_size=self.score_font_size,
@@ -167,8 +167,8 @@ class GameView(arcade.View):
 
         self.menu_title_text = arcade.Text(
             "PING",
-            self.center_x,
-            self.center_y + (100 * SCALE_Y),
+            self.screen_center_x,
+            self.screen_center_y + (100 * SCALE_Y),
             color=arcade.color.WHITE_SMOKE,
             font_size=self.title_font_size,
             font_name="Bit5x3",
@@ -177,8 +177,8 @@ class GameView(arcade.View):
 
         self.menu_prompt_text = arcade.Text(
             "Press SPACE to Play",
-            self.center_x,
-            self.center_y,
+            self.screen_center_x,
+            self.screen_center_y,
             color=arcade.color.WHITE_SMOKE,
             font_size=self.menu_font_size,
             font_name="Bit5x3",
@@ -187,8 +187,8 @@ class GameView(arcade.View):
 
         self.game_over_title_text = arcade.Text(
             "",
-            self.center_x,
-            self.center_y,
+            self.screen_center_x,
+            self.screen_center_y,
             color=arcade.color.WHITE_SMOKE,
             font_size=self.winner_font_size,
             font_name="Bit5x3",
@@ -197,8 +197,8 @@ class GameView(arcade.View):
 
         self.game_over_prompt_text = arcade.Text(
             "Press SPACE to Continue",
-            self.center_x,
-            self.center_y - (50 * SCALE_Y),
+            self.screen_center_x,
+            self.screen_center_y - (50 * SCALE_Y),
             color=arcade.color.WHITE_SMOKE,
             font_size=self.prompt_font_size,
             font_name="Bit5x3",
@@ -207,8 +207,8 @@ class GameView(arcade.View):
 
         self.serve_prompt_text = arcade.Text(
             "Press SPACE to Serve",
-            self.center_x,
-            self.center_y + (50 * SCALE_Y),
+            self.screen_center_x,
+            self.screen_center_y + (50 * SCALE_Y),
             color=arcade.color.WHITE_SMOKE,
             font_size=self.prompt_font_size,
             font_name="Bit5x3",
@@ -228,8 +228,8 @@ class GameView(arcade.View):
         self._update_score_text()
 
     def _reset_paddles(self):
-        self.paddle1_y = self.center_y
-        self.paddle2_y = self.center_y
+        self.paddle1_y = self.screen_center_y
+        self.paddle2_y = self.screen_center_y
 
         self.paddle1_up_pressed = False
         self.paddle1_down_pressed = False
@@ -237,15 +237,15 @@ class GameView(arcade.View):
         self.paddle2_down_pressed = False
 
     def _reset_ball(self):
-        self.ball_x = self.center_x
-        self.ball_y = self.center_y
+        self.ball_x = self.screen_center_x
+        self.ball_y = self.screen_center_y
         self.ball_speed = self.serve_speed
         self.ball_change_x = -self.serve_speed
         self.ball_change_y = 0
 
     def _reset_on_point(self):
-        self.ball_x = self.center_x
-        self.ball_y = self.center_y
+        self.ball_x = self.screen_center_x
+        self.ball_y = self.screen_center_y
         self.ball_speed = self.serve_speed
 
         if self.last_scoring_player == 1:
@@ -330,7 +330,7 @@ class GameView(arcade.View):
         thickness = max(1, round(2 * SCALE))
 
         for y in range(0, WINDOW_HEIGHT, dash_gap):
-            arcade.draw_line(self.center_x, y, self.center_x, y + dash_len, arcade.color.WHITE_SMOKE, thickness)
+            arcade.draw_line(self.screen_center_x, y, self.screen_center_x, y + dash_len, arcade.color.WHITE_SMOKE, thickness)
 
     def _draw_menu(self):
         self.menu_title_text.draw()
