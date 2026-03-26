@@ -6,18 +6,30 @@ I wrote this software with the goal of becoming more familiar with Python and ga
 
 [Software Demo Video]()
 
-How to Run
+## How to Run
 
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python main.py
+1. Open a terminal in the project folder
 
-Controls
+2. Create a virtual environment:
+   python3 -m venv .venv
 
-W / S → Player 1
-↑ / ↓ → Player 2
-SPACE → start / serve / continue
+3. Activate it:
+   source .venv/bin/activate
+
+4. Install dependencies:
+   pip install -r requirements.txt
+
+5. Run the game:
+   python main.py
+
+## How to Play
+
+- Player 1: W / S  
+- Player 2: ↑ / ↓  
+- SPACE: start, serve, and continue  
+
+- First player to 2 points wins  
+- Ball speeds up during rallies  
 
 # Development Environment
 
