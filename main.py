@@ -365,7 +365,7 @@ class GameView(arcade.View):
     # -----------------------------
     # Update helpers
     # -----------------------------
-    def _move_paddle(self, y_value, up_pressed, down_pressed, delta_time):
+    def _move_paddle(self, y_value, up_pressed, down_pressed,delta_time):
         if up_pressed and not down_pressed:
             y_value += self.paddle_speed * delta_time
         elif down_pressed and not up_pressed:

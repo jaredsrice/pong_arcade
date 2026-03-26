@@ -19,6 +19,8 @@ pip install -r requirements.txt
 python main.py 
 ```
 
+Note: Keep the Fonts folder in the same directory as main.py or the game will not load the custom fonts.
+
 ## How to Play
 
 - Player 1: W / S  
@@ -39,6 +41,7 @@ python main.py
 - [Python Arcade Library](https://api.arcade.academy/en/stable/example_code/index.html)
 - [How to add fonts to Python Arcade](https://www.makeuseof.com/python-arcade-custom-fonts-text-effects/)
 - [Second Source for Python Arcade Library](https://arcade-pk.readthedocs.io/en/latest/)
+- [Python Math Library](https://docs.python.org/3/library/math.html)
 
 ## Future Work
 
