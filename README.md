@@ -4,7 +4,7 @@ I developed a Pong-style game using Python and the Arcade library. The game incl
 
 I wrote this software with the goal of becoming more familiar with Python and game development fundamentals. Through this project I gained experience working with real-time game loops, handling user input, managing game state, and implementing collision detection. The project also helped reinforce design practices such as organizing code into smaller helper methods, separating responsibilities like drawing and updating, and using scaling to maintain consistent gameplay across different window sizes.
 
-[Software Demo Video]()
+[Software Demo Video](https://youtu.be/2obw77GluSA)
 
 ## How to Run
 
